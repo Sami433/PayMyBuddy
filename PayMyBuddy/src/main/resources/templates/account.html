@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <link th:href="@{/main.css}" rel="stylesheet" />
+  <title>Pay My Buddy</title>
+</head>
+<body>
+<nav class=" navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="row">
+      <button type="button" class=" col-1 btn btn-success">Pay My Buddy</button>
+      <div class="col-sm-7 collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/transfer}">Transfer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/profile}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/contact}" >Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/login}" >Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/register}">Register</a>
+          </li>
+          <li class="nav-item">
+            <form th:action="@{/logout}" method="get">
+              <button type="submit" class="btn btn-primary mx-auto">Logout</button>
+            </form>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+Add an account?
+<form th:action="@{/process_updating_account}" method="get" th:object="${account}">
+
+  <div class="form-group row my-2 mx-5">
+    <input type="text" class="col-form-label col-4 mx-auto" placeholder="Amount " name="amount" th:field="*{amount}"
+           required>
+    <input type="text" class="col-form-label col-4 mx-auto" placeholder="IBAN" name="iban" th:field="*{iban}"
+           required>
+    <div class="form-group row my-2 mx-5">
+      <button type="submit" class="btn btn-primary col-1 mx-auto">Submit</button>
+    </div>
+  </div>
+</form>
+
+
+</body>
+</html>

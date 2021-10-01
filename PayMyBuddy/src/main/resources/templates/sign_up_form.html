@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href=""/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"></script>
+    <link th:href="@{/main.css}" rel="stylesheet" />
+    <title>Registration</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="d-flex flex-column ">
+        <button type="button" class="btn btn-success col-1 mx-auto mt-5 mb-1">Pay My Buddy</button>
+        <form th:action="@{/process_register}" method="post" th:object="${registerForm}">
+
+            <div class="form-group row my-2 mx-5">
+                <input type="email" class="col-form-label col-4 mx-auto" placeholder="Email" th:field="*{email}"
+                       required>
+            </div>
+            <div class="form-group row my-2 mx-5">
+                <input type="password" class="col-form-label col-4 mx-auto" placeholder="Password"
+                       th:field="*{password}"
+                       required minlength="6" maxlength="10">
+            </div>
+            <div class="form-group row my-2 mx-5">
+                <input type="password" class="col-form-label col-4 mx-auto" placeholder="Confirm Password"
+                       th:field="*{confirmPassword}"
+                       required minlength="6" maxlength="10">
+            </div>
+
+            <div class="form-group row my-2 mx-5">
+                <input type="text" class="col-form-label col-4 mx-auto" placeholder="First Name"
+                       th:field="*{firstName}"
+                       required minlength="2" maxlength="20">
+            </div>
+            <div class="form-group row my-2 mx-5">
+                <input type="text" class="col-form-label col-4 mx-auto " placeholder="Last Name"
+                       th:field="*{lastName}" required minlength="2" maxlength="20">
+            </div>
+            <div class="form-group row my-2 mx-5">
+                <button type="submit" class="btn btn-primary col-1 mx-auto">Sign Up</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>
