@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href=""/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-          crossorigin="anonymous"></script>
-  <link th:href="@{/main.css}" rel="stylesheet" />
-  <title>Log In</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Login - Shopme Admin</title>
+  <link th:href="@{/login.css}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 </head>
 <body>
-<div class="container-fluid">
-  <div class="d-flex flex-column col-7 border mt-5 mx-auto">
-    <button type="button" class="btn btn-success col-2 mx-auto mt-5 mb-1">Pay My Buddy</button>
-    <div th:if="${param.error}" class="alert alert-error mx-auto">
-      Invalid username and password.
-    </div>
-    <form th:action="@{/login}" method="post" th:object="${user}">
-
-      <div class="row my-2">
-        <input type="email" class="col-4 mx-auto" placeholder="Email" id="email" name="email"
-               required>
-      </div>
-      <div class="row my-3">
-        <input type="password" class="col-4 mx-auto" placeholder="Password" id="password" name="password"
-               required minlength="6" maxlength="10">
-      </div>
-      <div class="col-3 mx-auto my-3">
-        <input type="checkbox" id="remember-me" name="remember-me"> Remember me
-        </div>
-      <div class="row my-2">
-        <button type="submit" class="btn btn-primary col-2 mx-auto mb-5">Log in</button>
-      </div>
-    </form>
-
+<div class="container-fluid text-center">
+  <div>
+    <img class="img-fluid" th:src="@{/image.jpg}" />
   </div>
+  <form th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto;">
+
+    <div th:if="${param.error}">
+      <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+    </div>
+
+    <div th:if="${param.logout}">
+      <p class="text-warning">You have been logged out.</p>
+    </div>
+
+    <div class="border border-secondary p-3 rounded">
+      <div class="titre"><p>Pay My Buddy</p></div>
+      <div class="mail"> <p><input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus/>
+      </p>
+        <p>
+          <input type="password" name="password" class="form-control" placeholder="Password" required />
+        </p></div>
+      <div class="remember"><input type="checkbox" name="remember-me" /> Remember Me</div>
+      <p>
+      <div class="log"><input type="submit" value="Login" class="btn btn-primary" /></div>
+      </p>
+      <p> Do not have an account? <a href="/registration" th:href="@{/register}">Create your buddy account
+        here</a>.
+      <p>
+    </div>
+  </form>
 </div>
 </body>
 </html>

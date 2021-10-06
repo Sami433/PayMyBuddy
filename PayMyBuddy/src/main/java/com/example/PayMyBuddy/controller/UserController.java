@@ -71,15 +71,5 @@ public class UserController {
     }
 
 
-   /* @GetMapping("/register")
-    public String showRegistration(Model model, User user){
-        model.addAttribute("user", new User());
-        return "sign_up_form";
-    }
-    @PostMapping("/process_register")
-    public String processRegistration(User user){
-        userService.saveUser(user);
-        return "register_success";
-    }*/
 }
 
