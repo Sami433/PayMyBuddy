@@ -39,26 +39,5 @@ public class AccountService {
         accountRepository.setAmountByUserId(amount,iban,id);
 
     }
-
-    public void updateAmountSender(Account accountSender) {
-        org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
-                .getContext().getAuthentication().getPrincipal();
-        String username = springUser.getUsername();
-        int id = userService.findUserId(username);
-        Optional<Transfer> transfer = transferRepository.findSenderByFromId(id);
-        double amount = accountSender.getAmount() - transfer.get().getAmountAfterFee();
-        accountRepository.setAmountByUserId(amount, accountSender.getIban(), id);
-    }
-    public void updateAmountReceiver(Account accountReceiver) {
-        org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
-                .getContext().getAuthentication().getPrincipal();
-        String username = springUser.getUsername();
-        int id = userService.findUserId(username);
-        Optional<Transfer> transfer = transferRepository.findSenderByFromId(id);
-        int idReceiver = transfer.get().getTo().getId();
-        Optional<Transfer> transfersReceiver = transferRepository.findReceiverByToId(idReceiver);
-        double amount2 = accountReceiver.getAmount() + transfer.get().getAmountBeforeFee();
-        accountRepository.setAmountByUserId(amount2, accountReceiver.getIban(), idReceiver);
-    }
 }
 
