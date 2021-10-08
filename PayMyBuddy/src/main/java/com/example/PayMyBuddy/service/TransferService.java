@@ -3,6 +3,7 @@ package com.example.PayMyBuddy.service;
 import com.example.PayMyBuddy.model.Account;
 import com.example.PayMyBuddy.model.Transfer;
 import com.example.PayMyBuddy.model.User;
+import com.example.PayMyBuddy.repository.AccountRepository;
 import com.example.PayMyBuddy.repository.ConnectionRepository;
 import com.example.PayMyBuddy.repository.TransferRepository;
 import com.example.PayMyBuddy.repository.UserRepository;
@@ -27,6 +28,8 @@ public class TransferService {
     private ConnectionRepository connectionRepository;
     @Autowired
     private AccountService accountService;
+    @Autowired
+    private AccountRepository accountRepository;
 
     public void saveTransfer(Transfer transfer) throws Exception {
         //sender
@@ -50,9 +53,13 @@ public class TransferService {
         }
         transferRepository.save(transfer);
         Account accountSender = transfer.getFrom().getAccount();
-        accountService.updateAmountSender(accountSender);
+        double amount = accountSender.getAmount() - transfer.getAmountAfterFee();
+        accountRepository.setAmountByUserId(amount, accountSender.getIban(), id);
+
         Account accountReceiver = transfer.getTo().getAccount();
-        accountService.updateAmountReceiver(accountReceiver);
+        double amount2 = accountReceiver.getAmount() + transfer.getAmountBeforeFee();
+        accountRepository.setAmountByUserId(amount2, accountReceiver.getIban(), id2);
+
     }
 }
 

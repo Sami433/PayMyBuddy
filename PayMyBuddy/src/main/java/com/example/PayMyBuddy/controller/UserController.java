@@ -69,6 +69,10 @@ public class UserController {
         return "profile";
 
     }
+    @GetMapping("/contact")
+    public String contact(){
+        return "contact";
+    }
 
 
 }
