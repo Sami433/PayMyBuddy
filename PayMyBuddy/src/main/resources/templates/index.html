@@ -1,6 +1,4 @@
-
-
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
@@ -45,5 +43,97 @@
     </div>
 </div>
 </div>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site FreeCodeCamp</title>
+    <meta charset="UTF-8">
+    <link th:href="@{/index.css}" rel="stylesheet" />
+</head>
+<body>
+<nav>
+  <div class="titre"> <h1>Pay My Buddy</h1></div>
+    <div class="onglets">
+        <router-link
+                class="btn btn-outline-primary mr-2"
+                to="/meetings"
+        ><a th:href="@{/profile}">Profile</a></router-link>
+        <router-link
+                class="btn btn-outline-primary mr-2"
+                to="/meetings"
+        ><a th:href="@{/account}">Account</a></router-link>
+
+        <router-link
+                class="btn btn-outline-primary mr-2"
+                to="/login"
+        ><a th:href="@{/transfer}">Transaction</a></router-link>
+        <router-link
+                class="btn btn-outline-primary mr-2"
+                to="/meetings"
+        ><a th:href="@{/login}">Sign Out</a></router-link>
+
+    </div>
+</nav>
+
+<header>
+    <h1>Montrenmain</h1>
+
+    <button>Parcourir</button>
+</header>
+
+<section class="main" id="produits">
+
+    <div class="content">
+        <div class="card">
+            <div class="left">
+                <h1>Nos montres</h1>
+                <p>Nous possédons une large gamme de montres.</p>
+            </div>
+            <div class="right">
+                <img src="https://www.hublot.com/sites/default/files/styles/watch_item_desktop_1x_scale_no_crop_600_6000_/public/2021-05/Big-Bang-unico-king-gold-44-mm-soldier-shot.png?itok=GoVE0nFc" alt="">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="left">
+                <h1>Nos horloges</h1>
+                <p>Découvrez nos horloges traditionnelles! </p>
+            </div>
+            <div class="right">
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/61Ksyaa4K3L.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+
+    <h1>Nos services</h1>
+    <div class="services">
+
+        <div class="service">
+            <h3>Livraison gratuite</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quidem recusandae explicabo veniam voluptatem voluptatum reprehenderit dignissimos ipsum magnam accusantium, dolores odio, dolorem provident sapiente consequuntur harum eaque veritatis? Eveniet.</p>
+        </div>
+
+        <div class="service">
+            <h3>Paiement en ligne</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quidem recusandae explicabo veniam voluptatem voluptatum reprehenderit dignissimos ipsum magnam accusantium, dolores odio, dolorem provident sapiente consequuntur harum eaque veritatis? Eveniet.</p>
+        </div>
+
+        <div class="service">
+            <h3>Aimé ou remboursé</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quidem recusandae explicabo veniam voluptatem voluptatum reprehenderit dignissimos ipsum magnam accusantium, dolores odio, dolorem provident sapiente consequuntur harum eaque veritatis? Eveniet.</p>
+        </div>
+
+    </div>
+
+
+</footer>
 </body>
 </html>
