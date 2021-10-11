@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <link th:href="@{/contact.css}" rel="stylesheet" />
+</head>
+<body>
+<nav class=" navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <button type="button" class=" col-1 btn btn-success">Pay My Buddy</button>
+            <div class="col-sm-7 collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/transfer}">Transfer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/profile}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contact}" >Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/login}" >Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/register}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <form th:action="@{/logout}" method="get">
+                            <button type="submit" class="btn btn-primary mx-auto">Logout</button>
+                        </form>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header>
+
+
+        <script>
+         /*Insérer le code JavaScript ici*/
+      </script>
+        <style>
+         /*Insérer le style CSS ici*/
+      </style>
+    <h1>Formulaire de contact</h1>
+    <form name="myForm" action="/file.php" onsubmit="return validateForm()" method="post">
+        <table class="form-style">
+            <tr>
+                <td>
+                    <label>
+                        Votre nom <span class="required">*</span>
+                    </label>
+                </td>
+                <td>
+                    <input type="text" name="name" class="long"/>
+                    <span class="error" id="errorname"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Votre adresse e-mail <span class="required">*</span>
+                    </label>
+                </td>
+                <td>
+                    <input type="email" name="email" class="long"/>
+                    <span class="error" id="erroremail"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Message <span class="required">*</span>
+                    </label>
+                </td>
+                <td>
+                    <textarea name="message" class="long field-textarea"></textarea>
+                    <span class="error" id="errormsg"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Envoyer">
+                    <input type="reset" value="Réinitialiser">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</header>
+
+
+</body>
+</html>

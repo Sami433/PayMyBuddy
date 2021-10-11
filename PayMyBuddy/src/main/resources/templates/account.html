@@ -16,22 +16,19 @@
       <div class="col-sm-7 collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" th:href="@{/transfer}">Transfer</a>
+            <a class="nav-link" th:href="@{/home}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" th:href="@{/profile}">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" th:href="@{/contact}" >Contact</a>
+            <a class="nav-link" th:href="@{/account}">Account</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" th:href="@{/login}" >Log In</a>
+            <a class="nav-link" th:href="@{/transfer}">Transfer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" th:href="@{/register}">Register</a>
+            <a class="nav-link" th:href="@{/contact}">Contact</a>
           </li>
           <li class="nav-item">
             <form th:action="@{/logout}" method="get">

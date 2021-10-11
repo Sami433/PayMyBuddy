@@ -56,17 +56,6 @@ public class UserController {
         return "login";
     }
 
-    /*@GetMapping("/profile")
-    public String profile(Model model){
-        org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
-                .getContext().getAuthentication().getPrincipal();
-        String username = springUser.getUsername();
-        Optional<User> user = userRepository.findByEmail(username);
-        model.addAttribute("user", user);
-        int id = userService.findUserId(username);
-        Account account = accountRepository.findByUserId(id);
-        model.addAttribute("account", account);
-        return "profile";*/
 
 
     @GetMapping("/contact")
