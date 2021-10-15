@@ -24,10 +24,38 @@ public class ConnectionService {
     @Autowired
     private UserRepository userRepository;
 
+
     public ConnectionService() {
     }
 
+
     public void add(Connection connection) {
+
+        org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
+                .getContext().getAuthentication().getPrincipal();
+        String userx = springUser.getUsername();             // appeller le user x
+        int id = userService.findUserId(userx);     // grace a la methode qui permet de trouver un user par son mail:  trouver l'id de l'user x
+        User user1 = userRepository.findById(id);   // trouver l'id de l'user 1
+
+        String email = connection.getUser2().getEmail();
+        Optional<User> user2 = userRepository.findByEmail(email);
+
+        user1.getEmail().equals(user2.get().getEmail());
+        connection.setUser1(user1);
+        connection.setUser2(user2.get());
+        connectionRepository.save(connection);
+    }
+}
+
+
+
+
+
+
+
+
+
+   /* public void add(Connection connection) {
         org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
                 .getContext().getAuthentication().getPrincipal();
         String username = springUser.getUsername();
@@ -62,3 +90,22 @@ public class ConnectionService {
 
 
 }
+            */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

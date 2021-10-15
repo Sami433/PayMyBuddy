@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -37,6 +38,14 @@ public class UserController {
     public String UserProfile() {
 
         return "index";
+    }
+
+    @GetMapping("/users")
+    public String listUsers(Model model) {
+        List<User> listUsers = userRepository.findAll();
+        model.addAttribute("listUsers", listUsers);
+
+        return "users";
     }
     @GetMapping("/register")
     public ModelAndView showRegistration(RegisterForm registerForm){
@@ -78,5 +87,6 @@ public class UserController {
         return "profile";
 
     }
+
 
 }

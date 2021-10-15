@@ -28,15 +28,28 @@ public class AccountService {
     public AccountService() {
     }
 
-    public void update(Account account) {
+    public void add (Account account) {
         org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
                 .getContext().getAuthentication().getPrincipal();
         String username = springUser.getUsername();
         Optional<User> user = userRepository.findByEmail(username);
-        int id= user.get().getId();
-        double amount = user.get().getAccount().getAmount()+ account.getAmount();
+        int id = user.get().getId();
+        double amount = user.get().getAccount().getAmount() + account.getAmount();
         String iban = account.getIban();
-        accountRepository.setAmountByUserId(amount,iban,id);
+        accountRepository.setAmountByUserId(amount, iban, id);
+
+    }
+
+    public void withdraw (Account accoun) {
+        org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
+                .getContext().getAuthentication().getPrincipal();
+        String username = springUser.getUsername();
+        Optional<User> user = userRepository.findByEmail(username);
+        int id = user.get().getId();
+        double amount = user.get().getAccount().getAmount() - accoun.getAmount();
+        String iban = accoun.getIban();
+        accountRepository.setAmountByUserId(amount, iban, id);
+
 
     }
 }

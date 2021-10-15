@@ -27,11 +27,17 @@ public class AccountController {
         return "account";
     }
 
-    @GetMapping("/process_updating_account")
-    public String processUpdatingAccount(Account account) {
-        accountService.update(account);
+    @GetMapping("/process_adding_account")
+    public String processAddingAccount(Account account) {
+        accountService.add(account);
         return "add_account_success";
     }
+    @GetMapping("/process_withdraw_account")
+    public String processWithdrawAccount(Account account) {
+        accountService.withdraw(account);
+        return "add_account_success";
+    }
+
 
 
 }

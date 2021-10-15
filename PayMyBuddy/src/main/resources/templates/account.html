@@ -41,8 +41,8 @@
     </div>
   </div>
 </nav>
-Add an account?
-<form th:action="@{/process_updating_account}" method="get" th:object="${account}">
+Deposit Money
+<form th:action="@{/process_adding_account}" method="get" th:object="${account}">
 
   <div class="form-group row my-2 mx-5">
     <input type="text" class="col-form-label col-4 mx-auto" placeholder="Amount " name="amount" th:field="*{amount}"
@@ -54,7 +54,19 @@ Add an account?
     </div>
   </div>
 </form>
+Withdraw Money
+<form th:action="@{/process_withdraw_account}" method="get" th:object="${account}">
 
+  <div class="form-group row my-2 mx-5">
+    <input type="text" class="col-form-label col-4 mx-auto" placeholder="Amount " name="amount" th:field="*{amount}"
+           required>
+    <input type="text" class="col-form-label col-4 mx-auto" placeholder="IBAN" name="iban" th:field="*{iban}"
+           required>
+    <div class="form-group row my-2 mx-5">
+      <button type="submit" class="btn btn-primary col-1 mx-auto">Submit</button>
+    </div>
+  </div>
+</form>
 
 </body>
 </html>
