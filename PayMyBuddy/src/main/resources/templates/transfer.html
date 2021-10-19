@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
             crossorigin="anonymous"></script>
-    <link th:href="@{/main.css}" rel="stylesheet"/>
+    <link th:href="@{/transfer.css}" rel="stylesheet" />
     <title>Log In</title>
 </head>
 <body>
@@ -47,10 +47,10 @@
 </nav>
 <div class="d-flex flex-column col-7 mt-5 mx-auto">
     <div class="row my-2">
-        <div class="col-6"> Send Money</div>
+        <div class="send"><div class="col-6"> SEND MONEY</div></div>
         <div class="col-6 d-flex flex-row-reverse">
             <form th:action="@{/transfer/addConnection}">
-                <input type="submit" class="btn btn-primary mb-5" value="Add Connection"/>
+                <div class="connection"><input type="submit" class="btn btn-primary mb-5" value="Add Connection"/></div>
             </form>
 
         </div>
@@ -80,8 +80,8 @@
 </div>
 </div>
 <div class="d-flex flex-column col-7 mt-5 mx-auto">
-    <p class="font-weight-bold">My transaction</p>
-    <table class="table table-hover table-bordered">
+   <div class="transaction"><p class="font-weight-bold">TRANSACTIONS</p></div>
+<table class="table table-hover table-bordered">
         <thead>
         <tr class="bg-success">
             <th scope="col">Connections</th>
