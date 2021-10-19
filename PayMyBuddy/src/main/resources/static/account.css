@@ -28,6 +28,9 @@
 
 body{
 background-color:#dae9b6;
+margin:0 auto;
+width: 100%;
+overflow-x: hidden
 }
 
 .bb{
