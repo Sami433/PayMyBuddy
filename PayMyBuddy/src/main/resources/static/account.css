@@ -1,6 +1,6 @@
 .option {
 
-  background-color:#8e908f;
+  background-color:#15d67c;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -15,7 +15,7 @@
   border-radius: 5px 5px 5px 5px;
   margin: 5px 15px 15px 15px;
   margin-left:35px;
-  margin-top:15px;
+  margin-top:120px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
