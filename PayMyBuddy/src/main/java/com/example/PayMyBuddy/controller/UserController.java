@@ -40,13 +40,6 @@ public class UserController {
         return "index";
     }
 
-    @GetMapping("/users")
-    public String listUsers(Model model) {
-        List<User> listUsers = userRepository.findAll();
-        model.addAttribute("listUsers", listUsers);
-
-        return "users";
-    }
     @GetMapping("/register")
     public ModelAndView showRegistration(RegisterForm registerForm){
         ModelAndView modelAndView = new ModelAndView("sign_up_form");
@@ -65,12 +58,18 @@ public class UserController {
         return "login";
     }
 
+    @GetMapping("/demo")
+    public String demo(){
+        return "demo";
+    }
 
 
     @GetMapping("/contact")
     public String contact(){
         return "contact";
     }
+
+
 
 
 
