@@ -72,7 +72,6 @@ public class UserController {
 
 
 
-
     @GetMapping("/profile")
     public String profile(Model model){
         org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
