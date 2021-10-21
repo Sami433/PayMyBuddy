@@ -1,6 +1,6 @@
 .option {
 
-  background-color:#15d67c;
+  background-color:#157347;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -21,6 +21,7 @@
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  font-family:cursive;
 
 }
 
