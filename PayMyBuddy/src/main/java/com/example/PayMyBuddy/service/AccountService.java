@@ -40,14 +40,14 @@ public class AccountService {
 
     }
 
-    public void withdraw (Account accoun) {
+    public void withdraw (Account account) {
         org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
                 .getContext().getAuthentication().getPrincipal();
         String username = springUser.getUsername();
         Optional<User> user = userRepository.findByEmail(username);
         int id = user.get().getId();
-        double amount = user.get().getAccount().getAmount() - accoun.getAmount();
-        String iban = accoun.getIban();
+        double amount = user.get().getAccount().getAmount() - account.getAmount();
+        String iban = account.getIban();
         accountRepository.setAmountByUserId(amount, iban, id);
 
 
