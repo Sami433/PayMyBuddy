@@ -86,16 +86,16 @@ font-family:cursive;
  }
  @keyframes flash {
      0% {
-         color: #fff900;
-         text-shadow: 0 0 7px #fff900;
+         color: #00ad59;
+         text-shadow: 0 0 7px #1fc170;
      }
      90% {
          color: #484848;
          text-shadow: none;
      }
      100% {
-         color: #fff900;
-         text-shadow: 0 0 7px #fff900;
+         color: #1fc170;
+         text-shadow: 0 0 7px #1fc170;
      }
  }
 
@@ -139,3 +139,4 @@ font-family:cursive;
 
 margin-right:-50px;
 }
+
