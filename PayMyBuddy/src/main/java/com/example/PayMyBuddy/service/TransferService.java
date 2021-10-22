@@ -32,20 +32,19 @@ public class TransferService {
     private AccountRepository accountRepository;
 
     public void saveTransfer(Transfer transfer) throws Exception {
-        //sender
+
         org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
                 .getContext().getAuthentication().getPrincipal();
         String username = springUser.getUsername();
         int id = userService.findUserId(username);
         User from = userRepository.findById(id);
-        //receiver
+
         int id2 = transfer.getTo().getId();
         User to = userRepository.findById(id2);
         transfer.setDate(LocalDateTime.now());
         transfer.setFrom(from);
         transfer.setTo(to);
         double amountAfterFee = transfer.getAmountBeforeFee() * 1.005;
-        //here is the transfer method, if i can improve this or alter it in order to make it easier to run using user input from the main file, let me know
         if (transfer.getFrom().getAccount().getAmount() >= amountAfterFee) {
             transfer.setAmountAfterFee(amountAfterFee);
         } else {

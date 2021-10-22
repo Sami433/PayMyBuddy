@@ -58,12 +58,6 @@ public class UserController {
         return "login";
     }
 
-    @GetMapping("/demo")
-    public String demo(){
-        return "demo";
-    }
-
-
     @GetMapping("/contact")
     public String contact(){
         return "contact";
@@ -84,6 +78,8 @@ public class UserController {
         return "profile";
 
     }
+
+
 
 
 }
