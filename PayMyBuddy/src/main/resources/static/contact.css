@@ -61,7 +61,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: black;
+    background:#157347;
     background-size: cover;
     color: #fff;
     padding: 40px;
