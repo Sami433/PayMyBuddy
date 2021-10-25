@@ -1,5 +1,6 @@
 package com.example.PayMyBuddy.repository;
 
+import com.example.PayMyBuddy.form.RegisterForm;
 import com.example.PayMyBuddy.model.User;
 import com.example.PayMyBuddy.repository.UserRepository;
 import org.junit.jupiter.api.Test;
@@ -20,8 +21,9 @@ class UserRepositoryTest {
     private UserRepository repository;
     @Autowired
     private TestEntityManager testEntityManager;
+
     @Test
-    public void testCreateUser(){
+    public void testCreateUser() {
         User user = new User();
         user.setEmail("marvin@gmail.com");
         user.setFirstName("Marvin");
@@ -32,11 +34,13 @@ class UserRepositoryTest {
         User existUser = testEntityManager.find(User.class, savedUser.getId());
         assertThat(existUser.getEmail()).isEqualTo(user.getEmail());
     }
+
     @Test
-    public void testFindUserbyEmail(){
+    public void testFindUserbyEmail() {
         String email = "alex@gmail.com";
         Optional<User> user = repository.findByEmail(email);
         assertThat(user).isNotNull();
     }
+
 
 }

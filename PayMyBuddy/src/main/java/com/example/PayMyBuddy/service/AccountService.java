@@ -40,8 +40,7 @@ public class AccountService {
         String iban = account.getIban();
         accountRepository.setAmountByUserId(amount, iban, id);
 
-        if (amount > 5000) throw new ArithmeticException();
-
+        if (amount > 5000) throw new ArithmeticException("Somme excessive");
 
 
     }
