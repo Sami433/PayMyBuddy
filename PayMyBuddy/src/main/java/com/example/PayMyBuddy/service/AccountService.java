@@ -34,14 +34,16 @@ public class AccountService {
         org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
                 .getContext().getAuthentication().getPrincipal();
         String username = springUser.getUsername();
+
         Optional<User> user = userRepository.findByEmail(username);
         int id = user.get().getId();
         double amount = user.get().getAccount().getAmount() + account.getAmount();
-        String iban = account.getIban();
-        accountRepository.setAmountByUserId(amount, iban, id);
-
+            String iban = account.getIban();
         if (amount > 5000) throw new ArithmeticException("Somme excessive");
+        else {
+            accountRepository.setAmountByUserId(amount, iban, id);
 
+        }
 
     }
         public void withdraw (Account account){
@@ -53,6 +55,7 @@ public class AccountService {
             double amount = user.get().getAccount().getAmount() - account.getAmount();
             String iban = account.getIban();
             accountRepository.setAmountByUserId(amount, iban, id);
+
 
 
         }

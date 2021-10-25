@@ -58,6 +58,14 @@ public class UserController {
         return "login";
     }
 
+
+
+    @GetMapping("/fichier")
+    public String fichier(){
+        return "fichier";
+    }
+
+
     @GetMapping("/contact")
     public String contact(){
         return "contact";
