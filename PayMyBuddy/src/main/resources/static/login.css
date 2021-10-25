@@ -10,7 +10,7 @@ background-color:#c6c9cf;
 }
 
 .titre{
-  background-color: #12c939;
+  background-color: #157347;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -24,8 +24,9 @@ background-color:#c6c9cf;
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
   margin: 5px 15px 15px 15px;
-  margin-left:35px;
+  margin-left:3px;
   margin-top:15px;
+  padding-bottom:0px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
