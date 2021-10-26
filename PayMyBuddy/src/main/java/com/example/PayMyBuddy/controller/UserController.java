@@ -59,13 +59,6 @@ public class UserController {
     }
 
 
-
-    @GetMapping("/fichier")
-    public String fichier(){
-        return "fichier";
-    }
-
-
     @GetMapping("/contact")
     public String contact(){
         return "contact";
