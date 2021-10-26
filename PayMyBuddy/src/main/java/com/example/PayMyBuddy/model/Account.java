@@ -20,6 +20,9 @@ public class Account {
     @OneToOne
     User user;
 
+}
+
+    /*
     public Account plus(double amount) {
 
         this.amount += amount;
@@ -35,3 +38,4 @@ public class Account {
         }
     }
 }
+*/
