@@ -44,11 +44,11 @@ public class TransferService {
         transfer.setDate(LocalDateTime.now());
         transfer.setFrom(from);
         transfer.setTo(to);
-        double amountAfterFee = transfer.getAmountBeforeFee() ;
+        double amountAfterFee = transfer.getAmountBeforeFee();
         if (transfer.getFrom().getAccount().getAmount() >= amountAfterFee) {
             transfer.setAmountAfterFee(amountAfterFee);
         } else {
-            throw new Exception("Pas assez d'argent dans votre compte");
+            throw new Exception("Not enough money");
         }
         transferRepository.save(transfer);
         Account accountSender = transfer.getFrom().getAccount();
