@@ -42,5 +42,11 @@ class UserRepositoryTest {
         assertThat(user).isNotNull();
     }
 
+    @Test
+    public void testFindById() {
+        Integer id = 1;
+        Optional<User> user = repository.findById(id);
+        assertThat(user).isNotNull();
 
+    }
 }
