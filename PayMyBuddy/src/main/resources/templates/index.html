@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay My Buddy</title>
+    <title>Money X Money</title>
     <meta charset="UTF-8">
     <link th:href="@{/index.css}" rel="stylesheet" />
     <script type="text/javascript" src="index.js"></script>
@@ -15,7 +15,7 @@
     Your browser does not support the audio element.
 </audio>
 <nav>
-  <div class="titre"> <h1>Pay My Buddy</h1></div>
+  <div class="titre"> <h1>Money X Money</h1></div>
     <div class="onglets">
         <router-link
                 class="btn btn-outline-primary mr-2"
@@ -30,10 +30,6 @@
                 class="btn btn-outline-primary mr-2"
                 to="/login"
         ><a th:href="@{/transfer}">Transaction</a></router-link>
-        <router-link
-                class="btn btn-outline-primary mr-2"
-                to="/login"
-        ><a th:href="@{/contact}">Contact</a></router-link>
         <router-link
                 class="btn btn-outline-primary mr-2"
                 to="/meetings"
@@ -64,8 +60,8 @@
     <div class="content">
         <div class="card">
             <div class="left">
-                <h1>Echangez de l'argent</h1>
-                <p>Notre site vous permet d'échanger de l'argent avec une tierce personne.</p>
+                <blink> <h1>Transférez de l'argent!</h1></blink>
+                     <p>Notre site vous permet d'échanger de l'argent avec une tierce personne.</p>
             </div>
             <div class="right">
                 <img src="photobank2.jpg" alt="">
