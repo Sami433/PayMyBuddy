@@ -42,7 +42,7 @@ public class UserController {
 
     @GetMapping("/register")
     public ModelAndView showRegistration(RegisterForm registerForm){
-        ModelAndView modelAndView = new ModelAndView("sign_up_form");
+        ModelAndView modelAndView = new ModelAndView("register");
         modelAndView.addObject("registerForm", new RegisterForm());
         return modelAndView;
     }
@@ -56,12 +56,6 @@ public class UserController {
     @GetMapping("/login")
     public String login(){
         return "login";
-    }
-
-
-    @GetMapping("/contact")
-    public String contact(){
-        return "contact";
     }
 
 
