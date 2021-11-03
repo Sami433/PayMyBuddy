@@ -53,7 +53,7 @@ public class TransferService {
         transferRepository.save(transfer);
 
 
-        Account accountSender = transfer.getFrom().getAccount();
+       Account accountSender = transfer.getFrom().getAccount();
         double amount = accountSender.getAmount() - transfer.getAmountAfterFee();
         accountRepository.setAmountByUserId(amount, accountSender.getIban(), id);
 
