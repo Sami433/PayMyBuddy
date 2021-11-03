@@ -38,3 +38,33 @@ overflow-x: hidden
 margin-left:550px;
 
 }
+
+blink {
+  -webkit-animation: 1s linear infinite condemed_blink_effect; // pour Safari 4.0-8.0
+  animation: 1s linear infinite condemed_blink_effect;
+}
+@-webkit-keyframes condemed_blink_effect { // pour Safari 4.0-8.0
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+
+  }
+}
+@keyframes condemed_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+
