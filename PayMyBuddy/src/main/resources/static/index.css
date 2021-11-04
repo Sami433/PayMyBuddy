@@ -11,10 +11,11 @@ body{
     width: 100%;
     overflow-x: hidden
 
+
 }
 
 p {
-  animation-duration: 15s;
+  animation-duration: 30s;
   animation-name: glissement;
   animation-iteration-count: infinite;
 }
