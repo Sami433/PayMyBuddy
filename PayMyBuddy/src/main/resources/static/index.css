@@ -4,7 +4,7 @@ html{
 
 
 body{
-    background-color:#adb5b8;
+    background-color:#dae9b6;
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
     margin:0 auto;
@@ -229,16 +229,16 @@ padding-left:420px;
 }
 @keyframes flash {
     0% {
-        color: #fff900;
-        text-shadow: 0 0 7px #fff900;
+        color: #dae9b6;
+        text-shadow: 0 0 7px #157347;
     }
     90% {
         color: #484848;
         text-shadow: none;
     }
     100% {
-        color: #fff900;
-        text-shadow: 0 0 7px #fff900;
+        color: #dae9b6;
+        text-shadow: 0 0 7px #157347;
     }
 }
 
