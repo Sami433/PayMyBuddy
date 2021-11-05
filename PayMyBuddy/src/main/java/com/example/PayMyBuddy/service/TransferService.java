@@ -36,11 +36,17 @@ public class TransferService {
         org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder
                 .getContext().getAuthentication().getPrincipal();
         String username = springUser.getUsername();
+
         int id = userService.findUserId(username);
         User from = userRepository.findById(id);
 
+
+
         int id2 = transfer.getTo().getId();
         User to = userRepository.findById(id2);
+
+
+
         transfer.setDate(LocalDateTime.now());
         transfer.setFrom(from);
         transfer.setTo(to);
@@ -63,5 +69,5 @@ public class TransferService {
 
     }
 }
-
+abc
 
