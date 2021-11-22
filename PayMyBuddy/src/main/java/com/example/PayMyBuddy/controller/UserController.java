@@ -58,6 +58,11 @@ public class UserController {
         return "login";
     }
 
+    @GetMapping("/test")
+    public String test(){
+        return "test";
+    }
+
 
 
     @GetMapping("/profile")
