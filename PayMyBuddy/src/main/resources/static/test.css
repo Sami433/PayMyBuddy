@@ -65,34 +65,24 @@ header .navbar li a:hover{
 
 .banniere{
     position: relative;
-    width: 100%;
-    min-height: 100vh;
+    /*width: 100%;
+    min-height: 100vh;*/
+    height:50vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(photobank.jpg);
+    background-image: url(imageabout2.jpg);
     background-size: cover;
 }
 
-.banniere .contenu{
-    max-width: 70%;
-    text-align: center;
-}
-.banniere .contenu h2{
-    color: #fff;
-    font-size: 3em;
-    text-transform: capitalize;
-}
-.contenu p:nth-child(2){
-    color: #ffff;
-    font-size: 1.2em;
-}
 
 
 
 section{
     padding: 100px;
 }
+
+
 .row{
     position: relative;
     width: 100%;
@@ -100,17 +90,9 @@ section{
     justify-content: space-between;
 }
 
-.row .col50{
-    position: relative;
-    width: 48%;
-    justify-content: center;
-    align-items: center;
 
-}
 
-.row .col50 h2{
-    margin-bottom: 20px;
-}
+
 
 .titre-texte{
     color: #000;
@@ -125,11 +107,7 @@ section{
     font-weight: 700px;
 }
 
-.row .col50 img{
-    height: 450px;
-    width: 600px;
-    position: relative;
-}
+
 
 .titre{
     display: flex;
@@ -139,93 +117,7 @@ section{
     flex-direction: column;
 }
 
-.menu{
-    margin-top: -100px;
-}
 
-.menu .contenu{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.menu .contenu .box{
-    width: 350px;
-    margin: 20px;
-    border: 20px solid #fff;
-    box-shadow: 20px 15px 35px rgba(0,0,0, 0.8);
-}
-
-.menu .contenu .box .imbox{
-    position: relative;
-    width: 100%;
-    height: 300px;
-}
-
-.menu .contenu .box .imbox img{
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.menu .contenu .box .text{
-    text-align: center;
-    font-weight: 300px;
-    color: #111;
-}
-
-.menu .contenu .box .text h3{
-    font-weight: 400;
-}
-
-.expert{
-    margin-top:-100px;
-}
-
-.expert .contenu{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.expert .contenu .box{
-    width: 250px;
-    margin: 15px;
-}
-.expert .contenu .box img{
-    position: relative;
-    width: 100%;
-    height: 300px;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-}
-
-.expert .contenu .box h3{
-    color: #111;
-    font-weight: 400;
-    text-align: center;
-}
-
-.temoignage{
-    background-image: url(./images/bg2.jpg);
-    background-size: cover;
-}
-
-
-.blanc .titre-texte{
-    color: #fff;
-}
-
-.blanc .titre-texte,
-.blanc p{
-    color: #fff;
-}
 
 header.sticky{
     background: #fff;
@@ -246,10 +138,12 @@ header.sticky li a:hover{
     border-bottom: 2px solid #fb911f;
 }
 
+
 @media (max-width: 991px) {
 header,
 header.sticky{
     padding: 10px 20px;
+
 }
 
 header .navbar li{
@@ -266,9 +160,7 @@ header .navbar li a {
 .navbar{
     display: none;
 }
-section{
-    padding: 20px;
-}
+
 
 header .navbar.active{
     width: 100%;
@@ -311,24 +203,15 @@ header.sticky .menuToggle{
     font-size: 2em;
 }
 
-.row .col50 img{
-    margin-left: 18%;
-}
 
 .contenu p:nth-child(2){
     font-size: 1.2em;
 }
-.expert{
-    margin-top: 0px;
-}
 
-.menu{
-    margin-top: 0px;
-}
 
-.row{
-    display: flex;
-    flex-direction: column;
-}
 
+.reseaux{
+
+margin-left: 300px;
+}
 
