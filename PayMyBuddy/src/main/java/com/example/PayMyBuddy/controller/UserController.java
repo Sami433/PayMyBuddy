@@ -63,6 +63,12 @@ public class UserController {
         return "test";
     }
 
+    @GetMapping("/testing")
+    public String testing(){
+        return "testing";
+    }
+
+
 
 
     @GetMapping("/profile")
