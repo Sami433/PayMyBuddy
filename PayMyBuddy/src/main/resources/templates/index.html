@@ -1,76 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Money X Money</title>
-    <meta charset="UTF-8">
-    <link th:href="@{/index.css}" rel="stylesheet" />
-</head>
+    <link rel="stylesheet" href="index.css">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Resto</title>
 <body>
-
-
-<audio controls autoplay>
-    <source src="music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-<nav>
-    <div class="titre"> <h1>Money X Money</h1></div>
-    <div class="onglets">
-        <router-link
-                class="btn btn-outline-primary mr-2"
-                to="/meetings"
-        ><a th:href="@{/profile}">Profile</a></router-link>
-        <router-link
-                class="btn btn-outline-primary mr-2"
-                to="/meetings"
-        ><a th:href="@{/account}">Account</a></router-link>
-
-        <router-link
-                class="btn btn-outline-primary mr-2"
-                to="/login"
-        ><a th:href="@{/transfer}">Transaction</a></router-link>
-        <router-link
-                class="btn btn-outline-primary mr-2"
-                to="/meetings"
-        ><a th:href="@{/login}">Login</a></router-link>
-
-    </div>
-</nav>
-
 <header>
-    <h1><span class="lettre">B</span>
-        <span class="lettre">I</span>
-        <span class="lettre">E</span>
-        <span class="lettre">N</span>
-        <span class="lettre">V</span>
-        <span class="lettre">E</span>
-        <span class="lettre">N</span>
-        <span class="lettre">U</span>
-        <span class="lettre">E</span>
-
-    </h1>
-
-
-
+    <a href="#" class="logo"><span>M</span>oney <span>X</span>&nbsp;<span>M</span>oney</a>
+    <div class="menuToggle" onclick="toggleMenu();"></div>
+    <ul class="navbar">
+        <li><a th:href="@{/profile}" onclick="toggleMenu();">Profile</a></li>
+        <li><a th:href="@{/account}" onclick="toggleMenu();">Account</a></li>
+        <li><a th:href="@{/transfer}" onclick="toggleMenu();">Transaction</a></li>
+        <li><a th:href="@{/about}" onclick="toggleMenu();">About Us</a></li>
+        <li><a th:href="@{/login}" onclick="toggleMenu();">Login</a></li>
+    </ul>
 </header>
-
-<section class="main" id="produits">
-
-    <div class="content">
-        <div class="card">
-            <div class="left">
-                <h1>&ensp;&ensp;Transférez de l'argent!</h1>
-                <p>Notre site vous permet d'échanger de l'argent <br> avec une tierce personne.</p>
-            </div>
-            <div class="right">
-                <!--  <img src="photobank2.jpg" onmouseover="this.src='piece.jpg'" onmouseout="this.src='photobank2.jpg'" />-->
-                <img src="photoindex.jpg" onmouseover="this.src='photoindex2.jpg'" onmouseout="this.src='photoindex.jpg'" />
+<section class="banniere" id="banniere">
+    <!--<div class="contenu">
+        <h2>Que Des Plats Délicieux</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <a href="#" class="btn1">Notre Menu</a>
+        <a href="#" class="btn2">Reservation</a>
+    </div>-->
+</section>
+<section class="apropos" id="apropos">
+    <div class="row">
+        <div class="col50">
+            <h2 class="titre-texte"><span>A</span> Propos De Money X Money</h2>
+            <p>Money X Money vous permet de virer de l'argent avec un autre utilisateur. Vous devez établir une connection
+                avec ce dernier en cliquant sur le bouton "Add Connection" et en ajoutant le mail de l'utilisateur vers lequel
+                vous souhaiter transférer de l'argent. Sur la page  "Account" vous pouvez mettre ou retirer de l'argent sur
+                votre compte grâce aux fonctions "Deposit Money" et "Withdraw Money".
+            </p>
+        </div>
+        <div class="col50">
+            <div class="img">
+                <img src="imageabout.jpg"/>
             </div>
         </div>
-
     </div>
 </section>
+
+
 <footer>
 
     <div class="images">
@@ -89,9 +66,18 @@
 
 </footer>
 
-<div class="cursor"></div>
+<script type="text/javascript">
+     window.addEventListener('scroll', function(){
+         const header =document.querySelector('header');
+         header.classList.toggle("sticky", window.scrollY > 0 );
+     });
 
-<script src="main.js"></script>
-
+     function toggleMenu(){
+         const tmenuToggle = document.querySelector('.menuToggle');
+         const navbar = document.querySelector('.navbar');
+         navbar.classList.toggle('active');
+         menuToggle.classList.toggle('active');
+     }
+ </script>
 </body>
 </html>
