@@ -22,20 +22,3 @@ public class Account {
 
 }
 
-    /*
-    public Account plus(double amount) {
-
-        this.amount += amount;
-        return this;
-    }
-
-    public Account minus(double amount) throws Exception {
-        if (amount <= this.amount) {
-            this.amount -= amount;
-            return this;
-        } else {
-            throw new Exception("Not enough money");
-        }
-    }
-}
-*/
