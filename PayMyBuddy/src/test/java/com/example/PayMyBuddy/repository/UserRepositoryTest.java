@@ -25,10 +25,10 @@ class UserRepositoryTest {
     @Test
     public void testCreateUser() {
         User user = new User();
-        user.setEmail("marvin@gmail.com");
-        user.setFirstName("Marvin");
-        user.setLastName("Kumar");
-        user.setPassword("marvin2020");
+        user.setEmail("Sam@gmail.com");
+        user.setFirstName("Sami");
+        user.setLastName("Nait");
+        user.setPassword("123456");
 
         User savedUser = repository.save(user);
         User existUser = testEntityManager.find(User.class, savedUser.getId());
@@ -37,7 +37,7 @@ class UserRepositoryTest {
 
     @Test
     public void testFindUserbyEmail() {
-        String email = "alex@gmail.com";
+        String email = "Sam@gmail.com";
         Optional<User> user = repository.findByEmail(email);
         assertThat(user).isNotNull();
     }

@@ -1,44 +1,46 @@
 html{
     scroll-behavior: smooth;
-
-
 }
 
+
 body{
-    background-color:#dae9b6;
+
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
     margin:0 auto;
     width: 100%;
     overflow-x: hidden
-    cursor: none;
- min-height: 100vh;
 }
 
 
 
-
-p {
-  animation-duration: 30s;
-  animation-name: glissement;
-  animation-iteration-count: infinite;
+blink {
+  -webkit-animation: 2s linear infinite condemed_blink_effect; // pour Safari 4.0-8.0
+  animation: 0.5s linear infinite condemed_blink_effect;
 }
-@keyframes glissement {
-  from {
-    margin-top: 50%;
-    width: 100%;
+@-webkit-keyframes condemed_blink_effect { // pour Safari 4.0-8.0
+  0% {
+    visibility: hidden;
   }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
 
-  to {
-    margin-top: 0%;
-    width: 100%;
   }
 }
-
-
-
-
-
+@keyframes condemed_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
 
 
 nav{
@@ -105,7 +107,6 @@ header{
     background-size: cover;
     color: #fff;
     padding: 40px;
-    width:100%;
 }
 
 
@@ -226,7 +227,7 @@ padding-left:420px;
 
 }
 .lettre {
-    color: #484848;
+    color: #157347;
     font-size: 80px;
     letter-spacing: 15px;
     margin-bottom: 150px;
@@ -238,7 +239,7 @@ padding-left:420px;
         text-shadow: 0 0 7px #157347;
     }
     90% {
-        color: #484848;
+        color: #157347;
         text-shadow: none;
     }
     100% {
@@ -246,6 +247,7 @@ padding-left:420px;
         text-shadow: 0 0 7px #157347;
     }
 }
+
 
 .lettre:nth-child(1){
     animation-delay: 0.1s;
@@ -293,11 +295,8 @@ audio {
 }
 
 
-.left{
-height: 260px;
-width:650px;
-margin-top:5px;
-}
+
+
 
 
 
@@ -349,3 +348,8 @@ margin-top:5px;
         opacity:0;
     }
 }
+
+
+
+
+

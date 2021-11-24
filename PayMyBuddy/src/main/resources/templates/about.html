@@ -6,9 +6,9 @@
     <title>Money X Money</title>
     <meta charset="UTF-8">
     <link th:href="@{/about.css}" rel="stylesheet" />
+    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-
 
 <audio controls autoplay>
     <source src="music.mp3" type="audio/mpeg">
@@ -17,6 +17,13 @@
 <nav>
     <div class="titre"> <h1>Money X Money</h1></div>
     <div class="onglets">
+
+
+        <router-link
+                class="btn btn-outline-primary mr-2"
+                to="/meetings"
+        ><a th:href="@{/index}">Home</a></router-link>
+
         <router-link
                 class="btn btn-outline-primary mr-2"
                 to="/meetings"
@@ -30,30 +37,27 @@
                 class="btn btn-outline-primary mr-2"
                 to="/login"
         ><a th:href="@{/transfer}">Transaction</a></router-link>
-
         <router-link
                 class="btn btn-outline-primary mr-2"
                 to="/login"
         ><a th:href="@{/about}">About Us</a></router-link>
-
         <router-link
                 class="btn btn-outline-primary mr-2"
                 to="/meetings"
-        ><a th:href="@{/login}">Login</a></router-link>
+        ><a th:href="@{/login}">Sign Out</a></router-link>
 
     </div>
 </nav>
 
 <header>
-    <h1><span class="lettre">B</span>
-        <span class="lettre">I</span>
-        <span class="lettre">E</span>
-        <span class="lettre">N</span>
-        <span class="lettre">V</span>
-        <span class="lettre">E</span>
-        <span class="lettre">N</span>
+    <h1><span class="lettre">A</span>
+        <span class="lettre">B</span>
+        <span class="lettre">O</span>
         <span class="lettre">U</span>
-        <span class="lettre">E</span>
+        <span class="lettre">T</span>&nbsp; &nbsp;
+        <span class="lettre">U</span>
+        <span class="lettre">S</span>
+
 
     </h1>
 
@@ -66,16 +70,14 @@
     <div class="content">
         <div class="card">
             <div class="left">
-                <h1>&nbsp; &nbsp; &nbsp; &nbsp; Virez de l'agent!</h1>
-                <p>Ce site a été crée en 2021 afin de permettre de transférer facilement de l'argent à une tierce personne
+                <blink> <h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Virez de l'argent!</h1></blink>
+                <p>Ce site a été crée en 2021 afin de permettre de transférer facilement de l'argent à une tierce personne.
                     En effet le but est d'offrir une interface plus simple et efficace que celle des autres sites permettant
                     des virements entre personnes.
-
                 </p>
             </div>
             <div class="right">
-                <!--  <img src="photobank2.jpg" onmouseover="this.src='piece.jpg'" onmouseout="this.src='photobank2.jpg'" />-->
-                <img src="photoindex.jpg" onmouseover="this.src='photoindex2.jpg'" onmouseout="this.src='photoindex.jpg'" />
+                <img src="photobank2.jpg" alt="">
             </div>
         </div>
 
@@ -98,10 +100,8 @@
     </div>
 
 </footer>
-
+</body>
 <div class="cursor"></div>
 
 <script src="main.js"></script>
-
-</body>
 </html>

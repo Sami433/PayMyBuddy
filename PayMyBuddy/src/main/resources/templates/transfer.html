@@ -82,7 +82,7 @@
             <div class="col-4">
                 <form>
                     <input class="form-select-number" type="number" min="1" placeholder="Amount of money"
-                           th:field="*{amountBeforeFee}" required>
+                           th:field="*{amountBeforeTransfer}" required>
                 </form>
             </div>
             <div class="col-4">
@@ -120,7 +120,7 @@
 
             <td th:utext="${transfer.date}"></td>
 
-            <td th:utext="${transfer.amountBeforeFee}"></td>
+            <td th:utext="${transfer.amountBeforeTransfer}"></td>
 
         </tr>
         </tbody>

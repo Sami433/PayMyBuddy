@@ -18,7 +18,7 @@ public class Transfer {
     private User from;
     @ManyToOne
     private User to;
-    private Double amountBeforeFee;
-    private Double amountAfterFee;
+    private Double amountBeforeTransfer;
+    private Double amountAfterTransfer;
 
 }
