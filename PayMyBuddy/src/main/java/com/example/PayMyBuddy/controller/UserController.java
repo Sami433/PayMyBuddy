@@ -58,14 +58,14 @@ public class UserController {
         return "login";
     }
 
+    @GetMapping("/about")
+    public String about (){
+        return "about";
+    }
+
     @GetMapping("/test")
     public String test(){
         return "test";
-    }
-
-    @GetMapping("/testing")
-    public String testing(){
-        return "testing";
     }
 
 
